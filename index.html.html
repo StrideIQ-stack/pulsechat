@@ -48,6 +48,8 @@
             </div>
           </div>
           <button id="signOutBtn" class="ghost-btn" type="button">Sign out</button>
+          <button id="enableNotificationsBtn" class="ghost-btn" type="button">Enable notifications</button>
+          <p id="notificationStatus" class="status-text" hidden></p>
         </div>
       </section>
 
@@ -92,7 +94,7 @@
       <section class="panel tips-panel">
         <p class="eyebrow">Setup</p>
         <h2>Connect Supabase to go live.</h2>
-        <p class="muted-copy">Add your Supabase URL and anon key in `pulsechat-supabase-config.js`, then run the SQL from `pulsechat-supabase.sql` in your Supabase SQL editor.</p>
+        <p class="muted-copy">Add your Supabase URL and anon key in `pulsechat-supabase-config.js`, then run the SQL from `pulsechat-supabase.sql` and `pulsechat-groups-supabase.sql` in your Supabase SQL editor.</p>
       </section>
     </aside>
 
@@ -117,6 +119,27 @@
           <span class="mini-chip">Realtime</span>
         </div>
         <div id="friendsList" class="friends-list"></div>
+
+        <div class="panel-heading section-subhead">
+          <div>
+            <p class="eyebrow">Groups</p>
+            <h2 id="groupCountLabel">0 groups</h2>
+          </div>
+          <span class="mini-chip">Rooms</span>
+        </div>
+        <form id="groupForm" class="stack-block group-create-card">
+          <label class="stacked-label">
+            Group name
+            <input id="groupNameInput" type="text" maxlength="40" placeholder="Weekend plans">
+          </label>
+          <label class="stacked-label">
+            Member handles
+            <input id="groupMembersInput" type="text" maxlength="180" placeholder="milo, averyruns, sam">
+          </label>
+          <button class="primary-btn" type="submit">Create group</button>
+          <p id="groupStatus" class="status-text" hidden></p>
+        </form>
+        <div id="groupsList" class="friends-list"></div>
       </section>
 
       <section class="panel chat-panel">
